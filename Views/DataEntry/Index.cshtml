@@ -1,0 +1,88 @@
+﻿
+@using System.Web.Mvc.Html
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="https://unpkg.com/jquery@2.2.4/dist/jquery.js"></script>
+@*<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />*@
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+
+<link href="~/Content/pqgrid/pqgrid.min.css" rel="stylesheet" />
+<link href="~/Content/pqgrid/pqgrid.ui.min.css" rel="stylesheet" />
+<link href="~/Content/pqgrid/themes/office/pqgrid.css" rel="stylesheet" />
+
+
+@*<link rel="Stylesheet" href="https://paramquery.com/pqselect/trial/pqselect.min.css" />*@
+<script src="~/Scripts/pqgrid/pqgrid.min.js"></script>
+@*<script src="https://paramquery.com/pqselect/trial/pqselect.min.js"></script>*@
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+
+<div class="panel-group">
+
+
+    <div class="panel-body panel-groupingBoder">
+
+        <div class="row">
+
+            <div class="col-sm-6 ">
+                <div class="panel-body panel-groupingBoder">
+                    <div class="container fill">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button type="button" class="btn btn-success" id="btnSave">Save</button>
+                                <button type="button" class="btn btn-success" id="btnReset">Reset</button>
+                                @Html.Hidden("PurchaseId")
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="row">
+                                <div class="col-sm-3 col-md-3">
+                                    @Html.Label("Partner Name", new { @class = "required font-weight-bold" })
+                                    @Html.DropDownList("ddlPartner", new SelectList(string.Empty, "Value", "Text"), "--Select--", new { @class = "form-control" })
+
+                                </div>
+                                <div class="col-sm-4 col-md-4">
+                                    @Html.Label("Purchase Date", new { @class = "required font-weight-bold" })
+                                   
+                                        <input type="text" id="PurchaseDate" class="form-control" autocomplete="off" />
+                                       @* @Html.TextBox("PurchaseDate")*@
+                                    </div>
+                                    <div class="col-sm-3 col-md-3">
+                                        @Html.Label("Amount", new { @class = "required font-weight-bold" })
+                                        @Html.TextBox("Amount", "", new { @class = "form-control", @onkeydown = "return isNumeric()", @autocomplete = "off" })
+                                    </div>
+                                </div>
+                            <div class="row" style="padding:25px">
+                                <div id="FinancialEntryGrid" class="col-sm-12"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-6 ">
+                <div class="panel-body panel-groupingBoder">
+                    <div class="container fill">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button type="button" class="btn btn-success" id="btnCalculation">Calculate Fee</button>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row" style="padding-top: 90px; padding-left: 10px; padding-right: 10px ">
+                            <div id="ComissionGrid" class="col-sm-12"></div>
+                        </div>
+                    </div>
+
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="~/Scripts/DataEntry.js"></script>

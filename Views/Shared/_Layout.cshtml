@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10xOne Data Entry</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryDate")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/jquery/external")
+    @Styles.Render("~/Content/themes/base/css")
+
+</head>
+<body>
+    <div class="container-narrow">
+        <div class="masthead">
+            <ul class="nav nav-pills pull-right">
+            </ul>
+            <h3 class="text-muted" >Purchase Data Manager</h3>
+        </div>
+
+            @RenderSection("featured", required: false)
+            <section>
+                @RenderBody()
+            </section>
+        <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - 10xOne Data Entry</p>
+            </footer>
+        </div>
+</body>
+</html>
